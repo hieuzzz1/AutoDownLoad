@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 const APP_URL = process.env.APP_URL || `http://localhost:${port}`;
 
 app.use(express.static('public'));
-const indexRouter = require('./routes/index'); // Sửa 'routers' thành 'routes'
+const indexRouter = require('./routers/index'); // Sửa 'routers' thành 'routes'
 app.use('/', indexRouter);
 
 // Tự ping để giữ server không ngủ
