@@ -7,8 +7,7 @@ const { pipeline } = require('stream');
 // Logic tải file APK
 const downloadApk = (req, res) => {
     const fileName = req.params.fileName || 'Text'; // Nếu không có params thì mặc định là 'Text'
-    const filePath = path.join('D:', 'Chat_bot_mess', 'Upload_APK', `${fileName}.apk`);
-
+    const filePath = path.join(__dirname, '../apk', `${fileName}.apk`);
     // Kiểm tra file tồn tại
     if (!fs.existsSync(filePath)) {
         return res.status(404).send('File không tồn tại.');
