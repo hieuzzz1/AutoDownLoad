@@ -47,7 +47,9 @@ const downloadApk = (req, res) => {
 router.get('/', (req, res) => {
     res.sendFile('index.html', { root: './views' });
 });
-
+router.get('/ping', (req, res) => {
+    res.send('Server is alive');
+});
 // Route để tải file APK với tham số fileName
 router.get('/download/:fileName?', downloadApk);
 
