@@ -4,61 +4,59 @@ const fs = require('fs');
 const path = require('path');
 const { pipeline } = require('stream');
 
-// Logic tải file APK hoặc EXE
-const downloadFile = (req, res) => {
-    const fileName = req.params.fileName;
-    if (!fileName) {
-        return res.status(400).send('Thiếu tên file.');
-    }
-
-    // Xác định phần mở rộng hợp lệ
-    const allowedExtensions = ['apk', 'exe'];
-    const fileExtension = path.extname(fileName).toLowerCase().replace('.', '');
-
-    if (!allowedExtensions.includes(fileExtension)) {
-        return res.status(400).send('Định dạng file không hợp lệ.');
-    }
-
-    // Đường dẫn thư mục chứa file
-    const filePath = path.join(__dirname, '../files', fileName);
-
+// Logic tải file APK
+const downloadApk = (req, res) => {
+    const nameFile = 'apk' || 'exe';
+    const fileName = req.params.fileName || 'Text'; // Nếu không có params thì mặc định là 'Text'
+    const filePath = path.join(__dirname, '../apk', `${fileName}.${nameFile}`);
     // Kiểm tra file tồn tại
     if (!fs.existsSync(filePath)) {
         return res.status(404).send('File không tồn tại.');
     }
 
-    // Lấy thông tin file
+    // Lấy thông tin file (stat) chỉ 1 lần
     const stat = fs.statSync(filePath);
     res.setHeader('Content-Length', stat.size);
-
-    // Xác định Content-Type
-    const contentTypes = {
-        apk: 'application/vnd.android.package-archive',
-        exe: 'application/octet-stream',
-    };
-
-    res.setHeader('Content-Type', contentTypes[fileExtension] || 'application/octet-stream');
-    res.setHeader('Content-Disposition', `attachment; filename="${fileName}"`);
+    res.setHeader('Content-Type', 'application/vnd.android.package-archive');
+    res.setHeader('Content-Disposition', `attachment; filename="${fileName}.apk"`);
     res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, private');
-    res.setHeader('Content-Encoding', 'identity');
+    res.setHeader('Content-Encoding', 'identity'); // Tắt nén tự động
 
     // Tạo stream với buffer size 16MB
-    const fileStream = fs.createReadStream(filePath, { highWaterMark: 16 * 1024 * 1024 });
+    const fileStream = fs.createReadStream(filePath, {
+        highWaterMark: 16 * 1024 * 1024 // Buffer 16MB
+    });
 
     // Sử dụng pipeline để truyền dữ liệu
-    pipeline(fileStream, res, (err) => {
-        if (err) {
-            console.error(`Lỗi tải file ${fileName}:`, err);
-            if (!res.headersSent) {
-                res.status(500).send('Có lỗi xảy ra khi tải file.');
+    pipeline(
+        fileStream,
+        res,
+        (err) => {
+            if (err) {
+                console.error(`Lỗi tải file ${fileName}.apk:`, err);
+                if (!res.headersSent) {
+                    res.status(500).send('Có lỗi xảy ra khi tải file.');
+                }
+            } else {
+                console.log(`Hoàn tất tải ${fileName}.apk`);
             }
-        } else {
-            console.log(`Hoàn tất tải ${fileName}`);
         }
-    });
+    );
 };
 
-// Route tải file với cả APK và EXE
-router.get('/download/:fileName', downloadFile);
+// Route cho trang chủ (giữ nguyên)
+router.get('/', (req, res) => {
+    res.sendFile('index.html', { root: './views' });
+});
+router.get('/ping', (req, res) => {
+    res.send('Server is alive');
+});
+// Route để tải file APK với tham số fileName
+router.get('/download/:fileName?', downloadApk);
+
+// Route cho trang "about" (giữ nguyên)
+router.get('/about', (req, res) => {
+    res.send('<h1>Trang About</h1>');
+});
 
 module.exports = router;
