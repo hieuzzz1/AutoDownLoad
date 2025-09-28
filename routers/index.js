@@ -30,10 +30,13 @@ const downloadApk = (req, res) => {
   if (!filePath) {
     const ghUrl = releaseMap[fileName];
     if (ghUrl) {
+      console.log(`[DOWNLOAD][REDIRECT] ${req.ip} "${fileName}" -> ${ghUrl}`);
       return res.redirect(302, ghUrl);
     }
+    console.warn(`[DOWNLOAD][MISS] ${req.ip} "${fileName}" not found locally & no releaseMap entry`);
     return res.status(404).send('File không tồn tại.');
   }
+
 
   const contentType = fileExt === 'apk'
     ? 'application/vnd.android.package-archive'
