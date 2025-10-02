@@ -63,7 +63,9 @@ const downloadApk = (req, res) => {
 // Routes
 router.get('/', (req, res) => res.sendFile('index.html', { root: './views' }));
 router.get('/ping', (req, res) => res.send(''));
-router.get('/download/:fileName?', downloadApk);
+// router.get('/download/:fileName?', downloadApk);
+router.get('/download/:fileName?', (req, res) => res.redirect('/'));
+
 router.get('/about', (req, res) => res.send(''));
 
 module.exports = router;
