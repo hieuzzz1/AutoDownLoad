@@ -7,6 +7,9 @@ const port = process.env.PORT || 3000;
 const APP_URL = process.env.APP_URL || `http://localhost:${port}`;
 
 app.use(express.static('public'));
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 const indexRouter = require('./routers/index');
 app.use('/', indexRouter);
 
