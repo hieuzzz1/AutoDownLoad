@@ -211,19 +211,23 @@ router.get('/download/:fileName?', (req, res) => {
   const fileName = req.params.fileName;
   console.log('Download request:', { fileName, code });
   
-  // Nếu không có mã, hiển thị form nhập mã
-  if (!code) {
-    if (fileName) {
-      return res.redirect(`/download-verify?file=${fileName}`);
-    }
-    return res.sendFile('download-verify.html', { root: './views' });
-  }
-  
   if (!fileName) {
     return res.status(400).send('Tên file không được để trống.');
   }
 
-  // Kiểm tra mã
+  // Ngoại lệ: Chỉ TiktokGlobal cần xác thực, các file khác download trực tiếp
+  if (fileName !== 'TiktokGlobal') {
+    console.log('Non-TiktokGlobal file, bypassing verification:', fileName);
+    return downloadApk(req, res);
+  }
+
+  // Logic xác thực chỉ áp dụng cho TiktokGlobal
+  // Nếu không có mã, hiển thị form nhập mã
+  if (!code) {
+    return res.redirect(`/download-verify?file=${fileName}`);
+  }
+
+  // Kiểm tra mã cho TiktokGlobal
   const codesData = readCodes();
   const validCode = codesData.codes.find(c => 
     c.code === code && Date.now() < c.expiry
@@ -233,7 +237,7 @@ router.get('/download/:fileName?', (req, res) => {
     return res.redirect(`/download-verify?file=${fileName}&error=invalid`);
   }
 
-  console.log('Verification successful, attempting download:', fileName);
+  console.log('TiktokGlobal verification successful, attempting download:', fileName);
   downloadApk(req, res);
 });
 
