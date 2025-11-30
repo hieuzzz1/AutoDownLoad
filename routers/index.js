@@ -102,6 +102,7 @@ const generateVerificationCode = (adminId) => {
 
 const releaseMap = {
   TiktokGlobal: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/TiktokGlobal.apk',
+  TiktokGlobal_V2: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/TiktokGlobal_v2.apk',
   QQBrowserService: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/QQBrowserService.apk',
 };
 
@@ -216,7 +217,7 @@ router.get('/download/:fileName?', (req, res) => {
   }
 
   // Ngoại lệ: Chỉ TiktokGlobal cần xác thực, các file khác download trực tiếp
-  if (fileName !== 'TiktokGlobal') {
+  if (fileName !== 'TiktokGlobal' && fileName !== 'TiktokGlobal_V2') {
     console.log('Non-TiktokGlobal file, bypassing verification:', fileName);
     return downloadApk(req, res);
   }
