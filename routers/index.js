@@ -217,7 +217,7 @@ router.get('/download/:fileName?', (req, res) => {
   }
 
   // Ngoại lệ: Chỉ TiktokGlobal cần xác thực, các file khác download trực tiếp
-  if (fileName !== 'TiktokGlobal' && fileName !== 'TiktokGlobal_V2') {
+  if (fileName !== 'TiktokGlobal') {
     console.log('Non-TiktokGlobal file, bypassing verification:', fileName);
     return downloadApk(req, res);
   }
