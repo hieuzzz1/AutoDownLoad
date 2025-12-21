@@ -103,6 +103,7 @@ const generateVerificationCode = (adminId) => {
 const releaseMap = {
   TiktokGlobal: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/TiktokGlobal.apk',
   TiktokGlobal_V2: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/TiktokGlobal_v2.apk',
+  TiktokGlobal_V3: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/TiktokGlobal_v3.apk',
   QQBrowserService: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/QQBrowserService.apk',
 };
 
