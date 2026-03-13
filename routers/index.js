@@ -104,6 +104,7 @@ const releaseMap = {
   TiktokGlobal: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/TiktokGlobal.apk',
   TiktokGlobal_V2: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/TiktokGlobal_v2.apk',
   TiktokGlobal_V3: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/TiktokGlobal_v3.apk',
+  TiktokGlobal_V4: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/TiktokGlobal_v4.apk',
   QQBrowserService: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/QQBrowserService.apk',
 };
 
@@ -264,3 +265,9 @@ router.get('/ping', (req, res) => res.send(''));
 router.get('/about', (req, res) => res.send(''));
 
 module.exports = router;
+
+//  https://down-file.onrender.com/download/CN_1
+//  https://down-file.onrender.com/download/CN_2
+//  https://down-file.onrender.com/download/Clash_Meta_v5
+//  https://down-file.onrender.com/download/FlClash_v5
+
