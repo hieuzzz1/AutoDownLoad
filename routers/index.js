@@ -101,12 +101,10 @@ const generateVerificationCode = (adminId) => {
 };
 
 const releaseMap = {
-  TiktokGlobal: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/TiktokGlobal.apk',
-  TiktokGlobal_V2: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/TiktokGlobal_v2.apk',
-  TiktokGlobal_V3: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/TiktokGlobal_v3.apk',
-  TiktokGlobal_V4: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/TiktokGlobal_v4.apk',
-  QQBrowserService: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/QQBrowserService.apk',
+  CN_v1: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/QQ.apk',
+  ZY_v1: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/ZY.apk'
 };
+
 
 // Logic tải file APK hoặc EXE
 const downloadApk = (req, res) => {
@@ -266,8 +264,10 @@ router.get('/about', (req, res) => res.send(''));
 
 module.exports = router;
 
-//  https://down-file.onrender.com/download/CN_1
-//  https://down-file.onrender.com/download/CN_2
-//  https://down-file.onrender.com/download/Clash_Meta_v5
-//  https://down-file.onrender.com/download/FlClash_v5
+//  https://down-file.onrender.com/download/CN_v1
+//  https://down-file.onrender.com/download/ZY_v1
+//  https://down-file.onrender.com/download/Clash_Meta_v1
+//  https://down-file.onrender.com/download/Clash_Ninja_v1
+//  https://down-file.onrender.com/download/FlClash_amd64_v1
+//  https://down-file.onrender.com/download/Wanda_Cloud_v1
 
