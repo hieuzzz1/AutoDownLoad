@@ -102,7 +102,8 @@ const generateVerificationCode = (adminId) => {
 
 const releaseMap = {
   CN_v1: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/QQ.apk',
-  ZY_v1: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/ZY.apk'
+  ZY_v1: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/ZY.apk',
+  ZY_v2: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/ZY_v2.apk'
 };
 
 
@@ -271,4 +272,7 @@ module.exports = router;
 //  https://down-file.onrender.com/download/FlClash_amd64_v1
 //  https://down-file.onrender.com/download/Wanda_Cloud_v1
 //  https://down-file.onrender.com/download/TravelTV
+//  https://down-file.onrender.com/download/NinjaClient
+//  https://down-file.onrender.com/download/ZY_v2
+
 
