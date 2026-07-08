@@ -103,7 +103,8 @@ const generateVerificationCode = (adminId) => {
 const releaseMap = {
   CN_v1: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/QQ.apk',
   ZY_v1: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/ZY.apk',
-  ZY_v2: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/ZY_v2.apk'
+  ZY_v2: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/ZY_v2.apk',
+  VieWarp: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/VieWarp.apk'
 };
 
 
@@ -274,5 +275,7 @@ module.exports = router;
 //  https://down-file.onrender.com/download/TravelTV
 //  https://down-file.onrender.com/download/NinjaClient
 //  https://down-file.onrender.com/download/ZY_v2
+//  https://down-file.onrender.com/download/Clash_Meta_v2
+//  https://down-file.onrender.com/download/VieWarp
 
 
