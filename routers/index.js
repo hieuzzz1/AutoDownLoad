@@ -104,7 +104,8 @@ const releaseMap = {
   CN_v1: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/QQ.apk',
   ZY_v1: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/ZY.apk',
   ZY_v2: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/ZY_v2.apk',
-  VieWarp: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/VieWarp.apk'
+  VieWarp: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/VieWarp.apk',
+  THC: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/THC.exe'
 };
 
 
@@ -277,5 +278,7 @@ module.exports = router;
 //  https://down-file.onrender.com/download/ZY_v2
 //  https://down-file.onrender.com/download/Clash_Meta_v2
 //  https://down-file.onrender.com/download/VieWarp
+//  https://down-file.onrender.com/download/Thunder_Cloud
+//  https://down-file.onrender.com/download/THC
 
 
