@@ -106,7 +106,6 @@ const releaseMap = {
   Clash_Meta: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/Clash_Meta.apk',
   FlClash_exe: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/FlClash_exe.exe'
 };
-/hieuzzz1/AutoDownLoad/releases/download/v1/Clash_Meta_v1.apk
 
 // Logic tải file APK hoặc EXE
 const downloadApk = (req, res) => {
