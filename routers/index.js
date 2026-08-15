@@ -101,14 +101,12 @@ const generateVerificationCode = (adminId) => {
 };
 
 const releaseMap = {
-  CN_v1: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/QQ.apk',
-  ZY_v1: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/ZY.apk',
-  ZY_v2: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/ZY_v2.apk',
-  VieWarp: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/VieWarp.apk',
-  THC: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/THC.exe',
-  TQ: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/TQ.apk'
+  Thunder_Cloud: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/Thunder_Cloud.apk',
+  Clash_Ninja: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/Clash_Ninja.apk',
+  Clash_Meta: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/Clash_Meta.apk',
+  FlClash_exe: 'https://github.com/hieuzzz1/AutoDownLoad/releases/download/v1/FlClash_exe.exe'
 };
-
+/hieuzzz1/AutoDownLoad/releases/download/v1/Clash_Meta_v1.apk
 
 // Logic tải file APK hoặc EXE
 const downloadApk = (req, res) => {
@@ -268,20 +266,10 @@ router.get('/about', (req, res) => res.send(''));
 
 module.exports = router;
 
-//  https://down-file.onrender.com/download/CN_v1
-//  https://down-file.onrender.com/download/ZY_v1
-//  https://down-file.onrender.com/download/Clash_Meta_v1
-//  https://down-file.onrender.com/download/Clash_Ninja_v1
-//  https://down-file.onrender.com/download/FlClash_amd64_v1
-//  https://down-file.onrender.com/download/Wanda_Cloud_v1
-//  https://down-file.onrender.com/download/TravelTV
-//  https://down-file.onrender.com/download/NinjaClient
-//  https://down-file.onrender.com/download/ZY_v2
-//  https://down-file.onrender.com/download/Clash_Meta_v2
-//  https://down-file.onrender.com/download/VieWarp
 //  https://down-file.onrender.com/download/Thunder_Cloud
-//  https://down-file.onrender.com/download/THC
-//  https://down-file.onrender.com/download/TQ
+//  https://down-file.onrender.com/download/Clash_Ninja
+//  https://down-file.onrender.com/download/Clash_Meta
+//  https://down-file.onrender.com/download/FlClash_exe
 
 
 
